@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>The White Eye</title>
+
+  <style>
+    #static {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+    }
+
+    .content {
+      position: fixed;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body bgcolor="#000000" onload="myFunction()">
+  <video autoplay muted loop id="static">
+    <source src="epic.mp4" type="video/mp4">
+    Fatal error 404: Your browser died
+  </video>
+  
+  <div class="content">
+    <font size="+6"> <h1 style="color:white; text-align:center; size:100">The White Eye</h1> </font>
+    <p style="color:white; text-align:center">We are watching</p>
+    <a href="https://discord.gg/rCqZN8B" style="text-decoration:none"><p style="color:white; text-align:center" id="ip_adds">47.245.64.200</p></a>
+  </div>
+
+  <script>
+    //Global Scope variables, usable in all functions...
+    var randomStuff = ["192.168.68.493", "127.0.0.12", "192.584.32.11", "128.74.200.118", "92.16.18.231", "234.102.147.239", "185.26.85.148", "192.164.188.89", "191.229.128.87", "22.121.124.63", "113.7.198.116", "64.208.187.53", "148.182.154.140", "56.233.53.137", "81.3.230.36", "249.136.173.26", "163.69.144.102", "122.42.166.96", "78.30.107.196", "11.251.242.190", "30.67.46.70", "174.152.210.212", "244.133.194.176", "169.34.175.49"];
+    var loadContentIndex = 0;
+
+    function myFunction() {
+        window.setInterval(loadContent, 100); //And set it to work every 2000ms (or 2s).
+    }
+
+    function loadContent() {
+        document.getElementById("ip_adds").innerHTML = randomStuff[loadContentIndex]; //Change the text
+
+        loadContentIndex++; //Increase the array counter.
+        if (randomStuff.length == loadContentIndex) { //If reached the end of the array...
+            loadContentIndex = 0; //Reset the counter
+        }
+    }
+  </script>
+</body>
+
+</html>
